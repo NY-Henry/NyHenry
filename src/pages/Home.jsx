@@ -88,7 +88,7 @@ const Home = () => {
             <a href="https://x.com/NyHenry5" target="blank">
               <AiFillTwitterCircle className="  cursor-pointer" />
             </a>
-            <a href="https://wa.me/0704025224" target="blank">
+            <a href="https://wa.me/+256704025224" target="blank">
               <BsWhatsapp className="  cursor-pointer" />
             </a>
             <a
@@ -100,11 +100,17 @@ const Home = () => {
             <a href="https://www.youtube.com/@nyhenry" target="blank">
               <AiFillYoutube className="  cursor-pointer" />
             </a>
-            <a ref={emailRef} href="mailto:nyomorehenry.com" target="blank">
+            <a
+              ref={emailRef}
+              href="mailto:nyomorehenry@gmail.com"
+              target="blank"
+            >
               <MdEmail className=" cursor-pointer" />
             </a>
           </div>
+
           {/* create a div with text of go back to to */}
+
           <div className="flex justify-center">
             <button
               onClick={handleTakingToTop}
@@ -113,6 +119,14 @@ const Home = () => {
               Go back to top
             </button>
           </div>
+          <a href="mailto:nyomorehenry@gmail.com" target="blank">
+            <p className="text-sm  m-4 text-center underline cursor-pointer dark:text-white">
+              nyomorehenry@gmail.com
+            </p>
+          </a>
+          <p className="text-sm  m-4 text-center underline cursor-pointer dark:text-white">
+            &copy;{new Date().getFullYear()} NY Henry
+          </p>
         </section>
       </section>
     </div>
