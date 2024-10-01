@@ -1,4 +1,4 @@
-import cartoonLogo from "../assets/profile.jpeg";
+import cartoonLogo from "../assets/cartoon222.png";
 const ImageComponent = () => {
   return (
     <img

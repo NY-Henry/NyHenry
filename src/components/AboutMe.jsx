@@ -61,7 +61,7 @@ const AboutMe = () => {
         js and Mongodb for web development. I use FL Studio for music production
         and alot more...
       </p>
-      <div className="flex items-center text-black dark:text-white text-5xl justify-center p-4  rounded gap-16">
+      <div className="flex items-center text-black dark:text-white text-5xl justify-center p-4  rounded gap-6">
         <a href="https://x.com/NyHenry5" target="blank" title="Reach me on X">
           <AiFillTwitterCircle className="  cursor-pointer" />
         </a>

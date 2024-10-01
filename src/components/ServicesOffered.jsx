@@ -63,7 +63,7 @@ const ServicesOfferedArray = [
 
 const ServicesOffered = ({ handleRef }) => {
   return (
-    <section className="py-12 px-4 dark:bg-transparent rounded-lg bg-cyan-50">
+    <section className="py-10 px-2 dark:bg-transparent rounded-lg bg-cyan-50">
       <h2 className="text-3xl dark:text-white font-semibold mb-4">
         Services I Offer
       </h2>
@@ -72,7 +72,7 @@ const ServicesOffered = ({ handleRef }) => {
           <div
             onClick={handleRef}
             key={index}
-            className="bg-gradient-to-b cursor-pointer from-cyan-50 to-teal-500 dark:bg-gradient-to-b dark:text-white dark:from-gray-900 dark:to-teal-300 dark:shadow-lg  p-6 rounded-lg shadow-md"
+            className="bg-gradient-to-b cursor-pointer from-cyan-50 to-teal-500 dark:bg-gradient-to-b dark:text-white dark:from-gray-900 dark:to-teal-300 dark:shadow-lg  p-2 rounded-lg shadow-xl"
           >
             <div className="flex items-center justify-center">
               <img

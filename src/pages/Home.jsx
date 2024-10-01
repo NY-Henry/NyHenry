@@ -14,6 +14,7 @@ import Languages from "../components/Languages";
 
 const Home = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [welcomeMessage, setWelcomeMessage] = useState(false);
   const emailRef = useRef(null);
 
   function handleRef() {
@@ -45,12 +46,29 @@ const Home = () => {
     });
   }
 
+  function toggleModal() {
+    setWelcomeMessage((w) => !w);
+  }
+
   return (
     <div className={`${darkMode ? "dark" : ""} `}>
       <section
         className={`min-h-screen px-10 font-Fredoka bg-gray-50  dark:bg-gray-900 text-gray-800`}
       >
-        <Navbar handleDarkMode={() => setDarkMode((d) => !d)} />
+        <Navbar
+          toggleModal={toggleModal}
+          handleDarkMode={() => setDarkMode((d) => !d)}
+        />
+        {welcomeMessage && (
+          <div className="text-center duration-300 animate-bounce rounded-lg  py-2">
+            <h1 className="text-xl font-bold text-teal-500 dark:text-cyan-200">
+              Welcome to My Portfolio 🙋‍♂️
+            </h1>
+            <p className="text-md animate-bounce duration-300 text-gray-700 dark:text-gray-300 mt-4">
+              Explore my work and get to know more about me.
+            </p>
+          </div>
+        )}
         <AboutMe />
         <div className="w-80 h-80  mx-auto overflow-hidden m-12 rounded-full bg-gradient-to-b from-teal-500 to-cyan-200">
           <ImageComponent />
@@ -66,7 +84,7 @@ const Home = () => {
           >
             Lastly connect with me or reach out to me on any of these 👇
           </p>
-          <div className="flex items-center text-black dark:text-white text-5xl justify-center p-4  rounded gap-16">
+          <div className="flex items-center text-black dark:text-white text-5xl justify-center p-4  rounded gap-6">
             <a href="https://x.com/NyHenry5" target="blank">
               <AiFillTwitterCircle className="  cursor-pointer" />
             </a>
