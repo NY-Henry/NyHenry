@@ -20,7 +20,7 @@ const Projects = () => {
     },
     {
       name: "** I am working on so many other projects so I'll be updating this list regularly",
-      description: `As you can see, most of my projects are built with React, for some reason I feel like React js is the best web frame work that gives you alot of flexiblity and does tie you up when it comes to scaling applications.
+      description: `As you can see, most of my projects are built with React, for some reason I feel like React js is the best web frame work that gives you alot of flexiblity and doesn't tie you up when it comes to scaling applications. That's why I love it so much.
         
         `,
     },
@@ -52,8 +52,9 @@ const Projects = () => {
         ))}
       </ul>
       <p className="mt-4 text-lg">
-        That doesn't mean I only work with javascript (React). I am expanding my
-        knowledge and learning new technologies as well.
+        That doesn't mean I only work with javascript (React), not really. I am
+        learning new technologies, Languages and frame-Works and staying
+        up-to-date with the latest trends.
       </p>
       <div className="flex justify-between items-center">
         <button
