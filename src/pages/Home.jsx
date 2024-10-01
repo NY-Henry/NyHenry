@@ -62,7 +62,7 @@ const Home = () => {
         <section className="py-12 px-4">
           <p
             onClick={handleRef}
-            className="text-xl underline cursor-pointer dark:text-white"
+            className="text-xl text-center underline cursor-pointer dark:text-white"
           >
             Lastly connect with me or reach out to me on any of these 👇
           </p>
