@@ -32,7 +32,7 @@ const Projects = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-4xl text-center text-teal-500 font-bold mb-4">
+      <h1 className="text-4xl cursor-pointer text-center text-teal-500 font-bold mb-4">
         Projects Page Will Be Ready Soon !
       </h1>
       <p className="mb-8 text-xl font-bold  text-center">
@@ -40,7 +40,10 @@ const Projects = () => {
       </p>
       <ul className="space-y-4">
         {projects.map((project, index) => (
-          <li key={index} className="p-4 border rounded shadow">
+          <li
+            key={index}
+            className="p-4 active:scale-95 cursor-pointer border rounded shadow"
+          >
             <h2 className="text-2xl text-teal-500 font-semibold">
               {project.name}
             </h2>
@@ -55,14 +58,14 @@ const Projects = () => {
       <div className="flex justify-between items-center">
         <button
           onClick={goToHome}
-          className="mt-8 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
+          className="mt-8 px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-700"
         >
           Back to Home
         </button>
         <a
           href="https://github.com/NY-Henry"
           target="_blank"
-          className="mt-8 cursor-pointer px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
+          className="mt-8 cursor-pointer px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-700"
         >
           CheckOut My Github
         </a>

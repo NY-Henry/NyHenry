@@ -4,7 +4,7 @@ import javasciptLogo from "../assets/javascript.png";
 const Languages = () => {
   return (
     <div className="flex mt-10  items-center justify-center md:max-w-[1000px]  mx-auto">
-      <div className=" dark:shadow-md  dark:text-white flex flex-col border border-gray-300 rounded-lg overflow-hidden shadow-lg transition-transform duration-200 hover:scale-105 md:flex-row">
+      <div className=" dark:shadow-md  dark:text-white flex flex-col  border-gray-300 rounded-lg overflow-hidden shadow-xl transition-transform duration-200 hover:scale-105 md:flex-row">
         <img
           src={javasciptLogo}
           alt={"JavaScript "}

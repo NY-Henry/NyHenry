@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   AiFillTwitterCircle,
   AiFillYoutube,
@@ -7,9 +7,28 @@ import {
 import { BsWhatsapp } from "react-icons/bs";
 
 const AboutMe = () => {
+  const youTubeRef = useRef(null);
+  function handleYouTubeRef() {
+    if (youTubeRef.current) {
+      youTubeRef.current.style.transition =
+        "color 0.5s ease, transform 0.5s ease";
+      youTubeRef.current.style.color = "red";
+      youTubeRef.current.style.transform = "scale(1.2)";
+    }
+    setTimeout(() => {
+      if (youTubeRef.current) {
+        youTubeRef.current.style.color = "";
+        youTubeRef.current.style.transform = "scale(1)";
+      }
+    }, 1000);
+  }
+
   return (
     <section className="py-12 mx-auto text-center xl:max-w-[900px] px-4">
-      <h2 className="text-5xl cursor-pointer active:scale-95 md:text-6xl text-teal-500 font-semibold  text-center mb-4">
+      <h2
+        onClick={handleYouTubeRef}
+        className="text-5xl cursor-pointer active:scale-95 md:text-6xl text-teal-500 font-semibold  text-center mb-4"
+      >
         NY Henry
       </h2>
       <p className="text-2xl cursor-pointer dark:text-white text-center mb-6 ">
@@ -38,8 +57,9 @@ const AboutMe = () => {
         >
           tutoring
         </span>
-        . I use technologies like React, Tailwind CSS, and Figma for web
-        development. I use FL Studio for music production and alot more.
+        . I use technologies like React, Tailwind CSS, Figma, Node js, Express
+        js and Mongodb for web development. I use FL Studio for music production
+        and alot more...
       </p>
       <div className="flex items-center text-black dark:text-white text-5xl justify-center p-4  rounded gap-16">
         <a href="https://x.com/NyHenry5" target="blank" title="Reach me on X">
@@ -60,6 +80,7 @@ const AboutMe = () => {
           <AiFillLinkedin className="  cursor-pointer" />
         </a>
         <a
+          ref={youTubeRef}
           href="https://www.youtube.com/@nyhenry"
           title="NY Henry's YouTube Channel"
           target="blank"

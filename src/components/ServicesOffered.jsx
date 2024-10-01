@@ -61,7 +61,7 @@ const ServicesOfferedArray = [
   },
 ];
 
-const ServicesOffered = () => {
+const ServicesOffered = ({ handleRef }) => {
   return (
     <section className="py-12 px-4 dark:bg-transparent rounded-lg bg-cyan-50">
       <h2 className="text-3xl dark:text-white font-semibold mb-4">
@@ -70,8 +70,9 @@ const ServicesOffered = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {ServicesOfferedArray.map((service, index) => (
           <div
+            onClick={handleRef}
             key={index}
-            className="bg-slate-100 dark:bg-gradient-to-b dark:text-white from-cyan-800 to-teal-400 dark:shadow-lg  p-6 rounded-lg shadow-md"
+            className="bg-gradient-to-b from-cyan-50 to-teal-500 dark:bg-gradient-to-b dark:text-white dark:from-gray-900 dark:to-teal-300 dark:shadow-lg  p-6 rounded-lg shadow-md"
           >
             <div className="flex items-center justify-center">
               <img
