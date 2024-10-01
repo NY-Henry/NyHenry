@@ -16,7 +16,7 @@ const Navbar = ({ handleDarkMode }) => {
         </li>
         <li>
           <Link
-            to="/projects"
+            to="/NyHenry/projects"
             className="text-2xl active:scale-95 shadow-lg bg-gradient-to-r font-semibold from-cyan-400 dark:shadow-cyan-300 to-teal-500 px-4 py-2  rounded-xl mr-2 ml-6 text-white"
           >
             Projects

@@ -27,7 +27,7 @@ const Projects = () => {
   ];
 
   const goToHome = () => {
-    navigate("/");
+    navigate("/NyHenry");
   };
 
   return (
@@ -42,7 +42,7 @@ const Projects = () => {
         {projects.map((project, index) => (
           <li
             key={index}
-            className="p-4 active:scale-95 cursor-pointer border rounded shadow"
+            className="p-4  active:scale-95 cursor-pointer border rounded shadow"
           >
             <h2 className="text-2xl text-teal-500 font-semibold">
               {project.name}

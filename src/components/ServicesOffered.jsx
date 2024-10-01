@@ -72,7 +72,7 @@ const ServicesOffered = ({ handleRef }) => {
           <div
             onClick={handleRef}
             key={index}
-            className="bg-gradient-to-b from-cyan-50 to-teal-500 dark:bg-gradient-to-b dark:text-white dark:from-gray-900 dark:to-teal-300 dark:shadow-lg  p-6 rounded-lg shadow-md"
+            className="bg-gradient-to-b cursor-pointer from-cyan-50 to-teal-500 dark:bg-gradient-to-b dark:text-white dark:from-gray-900 dark:to-teal-300 dark:shadow-lg  p-6 rounded-lg shadow-md"
           >
             <div className="flex items-center justify-center">
               <img

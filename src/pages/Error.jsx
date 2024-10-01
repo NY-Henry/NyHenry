@@ -13,7 +13,7 @@ const Error = () => {
       </p>
       <div className="text-center mt-4">
         <button
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/NyHenry")}
           className="bg-teal-500 text-white px-4 py-2 rounded"
         >
           Go to Home
