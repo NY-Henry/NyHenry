@@ -48,7 +48,7 @@ const Home = () => {
   return (
     <div className={`${darkMode ? "dark" : ""} `}>
       <section
-        className={`min-h-screen px-10 font-Fredoka bg-white  dark:bg-gray-900 text-gray-800`}
+        className={`min-h-screen px-10 font-Fredoka bg-gray-50  dark:bg-gray-900 text-gray-800`}
       >
         <Navbar handleDarkMode={() => setDarkMode((d) => !d)} />
         <AboutMe />
