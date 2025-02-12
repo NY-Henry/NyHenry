@@ -69,14 +69,15 @@ const Home = () => {
             </p>
           </div>
         )}
+        {/* About Section */}
         <AboutMe />
-        <div className="w-80 h-80  mx-auto overflow-hidden m-12 rounded-full bg-gradient-to-b from-teal-500 to-cyan-200">
+        {/* Profile Image */}
+        <div className="w-80 h-80 mx-auto overflow-hidden m-12 rounded-full shadow-xl shadow-red-500 transition-all duration-300 hover:scale-105 hover:shadow-cyan-500 hover:rotate-3">
           <ImageComponent />
         </div>
+        {/* Services Offered Section */}
         <ServicesOffered handleRef={handleCardRef} />
-
         <Languages />
-
         <section className="py-12 px-4">
           <p
             onClick={handleRef}

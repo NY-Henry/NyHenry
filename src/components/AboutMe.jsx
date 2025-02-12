@@ -4,7 +4,8 @@ import {
   AiFillYoutube,
   AiFillLinkedin,
 } from "react-icons/ai";
-import { BsWhatsapp } from "react-icons/bs";
+import { BsSpotify, BsWhatsapp } from "react-icons/bs";
+import { SiApplemusic } from "react-icons/si";
 
 const AboutMe = () => {
   const youTubeRef = useRef(null);
@@ -12,7 +13,7 @@ const AboutMe = () => {
     if (youTubeRef.current) {
       youTubeRef.current.style.transition =
         "color 0.5s ease, transform 0.5s ease";
-      youTubeRef.current.style.color = "red";
+      youTubeRef.current.style.color = "#FF0000"; // YouTube Red
       youTubeRef.current.style.transform = "scale(1.2)";
     }
     setTimeout(() => {
@@ -27,12 +28,12 @@ const AboutMe = () => {
     <section className="py-12 mx-auto text-center xl:max-w-[900px] px-4">
       <h2
         onClick={handleYouTubeRef}
-        className="text-5xl cursor-pointer active:scale-95 md:text-6xl text-teal-500 font-semibold  text-center mb-4"
+        className="text-5xl cursor-pointer active:scale-95 md:text-6xl text-teal-600 font-semibold text-center mb-4"
       >
         NY Henry
       </h2>
-      <p className="text-2xl cursor-pointer dark:text-white text-center mb-6 ">
-        Developer and Music Producer.
+      <p className="text-2xl cursor-pointer dark:text-white text-center mb-6">
+        Software Engineer and Music Producer.
       </p>
       <p className="mb-12 dark:text-white text-xl leading-8">
         Freelancer providing services in{" "}
@@ -40,10 +41,9 @@ const AboutMe = () => {
           title="My main field of expertise is web development"
           className="text-2xl cursor-pointer text-teal-500 drop-shadow-sm"
         >
-          {" "}
-          web development{" "}
-        </span>{" "}
-        ,
+          web development
+        </span>
+        ,{" "}
         <span
           title="I provide music production services check out my YT channel"
           className="text-2xl cursor-pointer text-teal-500 drop-shadow-sm"
@@ -59,33 +59,92 @@ const AboutMe = () => {
         </span>
         . I use technologies like React, Tailwind CSS, Figma, Node js, Express
         js and Mongodb for web development. I use FL Studio for music production
-        and alot more...
+        and a lot more...
       </p>
-      <div className="flex items-center text-black dark:text-white text-5xl justify-center p-4  rounded gap-6">
-        <a href="https://x.com/NyHenry5" target="blank" title="Reach me on X">
-          <AiFillTwitterCircle className="  cursor-pointer" />
-        </a>
+      {/* Social media Icons */}
+      <div className="flex items-center text-5xl justify-center p-4 rounded gap-6">
+        {/* X Logo */}
         <a
-          href="https://wa.me/+256704025224"
-          target="blank"
-          title="Chat with me on WhatApp"
+          href="https://x.com/NyHenry5"
+          target="_blank"
+          rel="noreferrer"
+          title="Reach me on X"
+          className="transition-transform duration-300 hover:scale-125"
         >
-          <BsWhatsapp className="  cursor-pointer" />
+          <AiFillTwitterCircle
+            className="cursor-pointer hover:brightness-125"
+            style={{ color: "#1DA1F2" }}
+          />
         </a>
-        <a
-          href="https://www.linkedin.com/in/ny-henry-766827267/"
-          target="blank"
-          title="NY linkedin"
-        >
-          <AiFillLinkedin className="  cursor-pointer" />
-        </a>
+
+        {/* YT Logo */}
         <a
           ref={youTubeRef}
           href="https://www.youtube.com/@nyhenry"
           title="NY Henry's YouTube Channel"
-          target="blank"
+          target="_blank"
+          rel="noreferrer"
+          className="transition-transform duration-300 hover:scale-125"
         >
-          <AiFillYoutube className="  cursor-pointer" />
+          <AiFillYoutube
+            className="cursor-pointer hover:brightness-125"
+            style={{ color: "#FF0000" }}
+          />
+        </a>
+
+        {/* Linked In Logo */}
+        <a
+          href="https://www.linkedin.com/in/ny-henry-766827267/"
+          target="_blank"
+          rel="noreferrer"
+          title="NY LinkedIn"
+          className="transition-transform duration-300 hover:scale-125"
+        >
+          <AiFillLinkedin
+            className="cursor-pointer hover:brightness-125"
+            style={{ color: "#0A66C2" }}
+          />
+        </a>
+
+        {/* Whatsapp Logo */}
+        <a
+          href="https://wa.me/+256704025224"
+          target="_blank"
+          rel="noreferrer"
+          title="Chat with me on WhatsApp"
+          className="transition-transform duration-300 hover:scale-125"
+        >
+          <BsWhatsapp
+            className="cursor-pointer hover:brightness-125"
+            style={{ color: "#25D366" }}
+          />
+        </a>
+
+        {/* Spotify Logo */}
+        <a
+          href="https://open.spotify.com/artist/0CwTUyi6ZRkPrWpfqCtIAh?si=TMcEHmUQRf21O4U1OT6xCw"
+          target="_blank"
+          rel="noreferrer"
+          title="Listen to my music on Spotify"
+          className="transition-transform duration-300 hover:scale-125"
+        >
+          <BsSpotify
+            className="cursor-pointer hover:brightness-125"
+            style={{ color: "#1DB954" }}
+          />
+        </a>
+        {/* Apple Music */}
+        <a
+          href=" https://music.apple.com/us/artist/ny-henry/1788512114"
+          target="_blank"
+          rel="noreferrer"
+          title="Listen to my music on Spotify"
+          className="transition-transform duration-300 hover:scale-125"
+        >
+          <SiApplemusic
+            className="cursor-pointer hover:brightness-125"
+            style={{ color: "#FC3C44" }}
+          />
         </a>
       </div>
     </section>

@@ -5,53 +5,52 @@ import mobileLogo from "../assets/mobile.png";
 import apiLogo from "../assets/api.png";
 import onlineStore from "../assets/onlinestore.png";
 import dbLogo from "../assets/database.png";
-import cloudLogo from "../assets/cloud.png";
+import tutoringLogo from "../assets/tutoring.png";
 import securityLogo from "../assets/cybersecurity.png";
 
 const ServicesOfferedArray = [
   {
-    title: "Frontend Web Development ✔✔",
+    title: "Frontend WebDevelopment🌟🌟🌟",
     description:
-      "Building responsive and high-quality websites using modern web technologies like HTML, CSS, JavaScript, and frameworks like React.",
+      "Building responsive and high-quality websites using modern web technologies like HTML, CSS, JavaScript, and frameworks like React and Next Js",
     imageUrl: reactPng,
   },
   {
-    title: "Backend Development ✔",
+    title: "Backend Development",
     description:
       "Developing robust and scalable server-side applications using Node.js, Express, and databases like MongoDB.",
     imageUrl: nodeLogo,
   },
   {
-    title: "Mobile App Development (Not available for now!!)",
+    title: "Mobile App Development",
     description:
-      "Creating user-friendly and efficient mobile applications for both Android and iOS platforms using technologies like React Native.",
+      "For both Android and iOS platforms using technologies like React Native.",
     imageUrl: mobileLogo,
   },
 
   {
-    title: "API Development ✔",
-    description:
-      "Creating and integrating RESTful and GraphQL APIs to enable seamless communication between different parts of an application.",
+    title: "API Development",
+    description: "Creating and integrating RESTful.",
     imageUrl: apiLogo,
   },
   {
-    title: "E-commerce Development (Not available for now!)",
+    title: "E-commerce Development",
     description:
       "Building custom e-commerce solutions with features like product management, payment gateways, and order processing.",
     imageUrl: onlineStore,
   },
 
   {
-    title: "Database Management ✔",
+    title: "Database Management",
     description:
       "Setting up and managing databases to store, retrieve, and manipulate data efficiently for web and (mobile applications! ).",
     imageUrl: dbLogo,
   },
   {
-    title: "Cloud Computing (Not available for now!)",
+    title: "Tutoring",
     description:
-      "Deploying applications on cloud platforms like AWS, Azure, and Google Cloud to ensure scalability, security, and performance.",
-    imageUrl: cloudLogo,
+      "Providing personalized coaching and mentoring in web development technologies, helping students and developers enhance their programming skills.",
+    imageUrl: tutoringLogo,
   },
   {
     title: "Cybersecurity (Not available for now!)",
@@ -63,27 +62,33 @@ const ServicesOfferedArray = [
 
 const ServicesOffered = ({ handleRef }) => {
   return (
-    <section className="py-10 px-2 dark:bg-transparent rounded-lg bg-cyan-50">
-      <h2 className="text-3xl dark:text-white font-semibold mb-4">
+    <section className="py-16 px-4 dark:bg-transparent rounded-lg bg-gradient-to-br from-cyan-50 to-white">
+      <h2 className="text-4xl dark:text-black font-bold mb-8 text-center">
         Services I Offer
+        <div className="w-24 h-1 bg-teal-500 mx-auto mt-2"></div>
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {ServicesOfferedArray.map((service, index) => (
           <div
             onClick={handleRef}
             key={index}
-            className="bg-gradient-to-b cursor-pointer from-cyan-50 to-teal-500 dark:bg-gradient-to-b dark:text-white dark:from-gray-900 dark:to-teal-300 dark:shadow-lg  p-2 rounded-lg shadow-xl"
+            className=" hover:scale-105 transition-all duration-300 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl overflow-hidden cursor-pointer"
           >
-            <div className="flex items-center justify-center">
+            <div className="relative h-64 overflow-hidden bg-gradient-to-br from-cyan-100 to-teal-50 dark:from-gray-700 dark:to-gray-600 p-6">
               <img
                 src={service.imageUrl}
                 alt={service.title}
-                className="w-1/2 h-52  rounded-t-lg mb-4"
+                className="w-3/4 h-full object-contain mx-auto transform group-hover:scale-110 transition-transform duration-300"
               />
             </div>
-
-            <h3 className="text-3xl font-semibold mb-2">{service.title}</h3>
-            <p className="text-gray-700  text-2xl">{service.description}</p>
+            <div className="p-6">
+              <h3 className="text-2xl font-bold mb-3 text-gray-800 dark:text-white group-hover:text-teal-500 transition-colors">
+                {service.title}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                {service.description}
+              </p>
+            </div>
           </div>
         ))}
       </div>

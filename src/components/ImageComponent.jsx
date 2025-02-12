@@ -1,8 +1,8 @@
-import cartoonLogo from "../assets/cartoon222.png";
+import profileImage from "../assets/profile.jpg";
 const ImageComponent = () => {
   return (
     <img
-      src={cartoonLogo}
+      src={profileImage}
       alt={"image"}
       style={{ width: "100%", height: "100%" }}
     />
