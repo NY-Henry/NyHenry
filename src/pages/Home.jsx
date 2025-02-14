@@ -11,11 +11,12 @@ import {
 import { BsWhatsapp } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import Languages from "../components/Languages";
+import { useTheme } from "../context/ThemeContext";
 
 const Home = () => {
-  const [darkMode, setDarkMode] = useState(false);
   const [welcomeMessage, setWelcomeMessage] = useState(false);
   const emailRef = useRef(null);
+  const { theme } = useTheme();
 
   function handleRef() {
     if (emailRef.current) {
@@ -51,14 +52,11 @@ const Home = () => {
   }
 
   return (
-    <div className={`${darkMode ? "dark" : ""} `}>
+    <div className={`${theme === "dark" ? "dark" : ""} `}>
       <section
         className={`min-h-screen px-10 font-Fredoka bg-gray-50  dark:bg-gray-900 text-gray-800`}
       >
-        <Navbar
-          toggleModal={toggleModal}
-          handleDarkMode={() => setDarkMode((d) => !d)}
-        />
+        <Navbar toggleModal={toggleModal} />
         {welcomeMessage && (
           <div className="text-center duration-300 animate-bounce rounded-lg  py-2">
             <h1 className="text-xl font-bold text-teal-500 dark:text-cyan-200">
@@ -72,12 +70,18 @@ const Home = () => {
         {/* About Section */}
         <AboutMe />
         {/* Profile Image */}
-        <div className="w-80 h-80 mx-auto overflow-hidden m-12 rounded-full shadow-xl shadow-red-500 transition-all duration-300 hover:scale-105 hover:shadow-cyan-500 hover:rotate-3">
+        <div
+          title="NY Henry"
+          className="w-80 h-80 mx-auto overflow-hidden m-12 rounded-full shadow-xl shadow-red-500 transition-all duration-300 hover:scale-105 hover:shadow-cyan-500 hover:rotate-3"
+        >
           <ImageComponent />
         </div>
         {/* Services Offered Section */}
         <ServicesOffered handleRef={handleCardRef} />
+        {/* Languages Section */}
         <Languages />
+
+        {/* Last Section */}
         <section className="py-12 px-4">
           <p
             onClick={handleRef}

@@ -1,7 +1,9 @@
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 
-const Navbar = ({ handleDarkMode, toggleModal }) => {
+const Navbar = ({ toggleModal }) => {
+  const { toggleTheme } = useTheme();
   return (
     <nav className="py-10 bg-teal-50 dark:bg-gradient-to-r from-gray-900 to-cyan-700 shadow-xl  shadow-cyan-100 dark:shadow-cyan-300 rounded-lg bg-opacity-35 mb-12 flex justify-between">
       <button
@@ -13,7 +15,7 @@ const Navbar = ({ handleDarkMode, toggleModal }) => {
       <ul className="flex items-center gap-2">
         <li>
           <BsFillMoonStarsFill
-            onClick={handleDarkMode}
+            onClick={toggleTheme}
             className="text-3xl active:scale-95  cursor-pointer dark:text-white"
           />
         </li>

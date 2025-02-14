@@ -1,8 +1,11 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 
 const Projects = () => {
   const navigate = useNavigate();
+  const { theme } = useTheme();
+
   const projects = [
     {
       name: "Online Book Store",
@@ -31,18 +34,27 @@ const Projects = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div
+      className={`container mx-auto p-4 ${
+        theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-gray-800"
+      }`}
+    >
       <h1 className="text-4xl cursor-pointer text-center text-teal-500 font-bold mb-4">
         Projects Page Will Be Ready Soon !
       </h1>
-      <p className="mb-8 text-xl font-bold  text-center">
+      <p className="mb-8 text-xl font-bold text-center">
         Meanwhile, here are some of the projects I've worked on:
       </p>
       <ul className="space-y-4">
         {projects.map((project, index) => (
           <li
             key={index}
-            className="p-4  active:scale-95 cursor-pointer border rounded shadow"
+            className={`p-4 active:scale-95 cursor-pointer border rounded shadow 
+            ${
+              theme === "dark"
+                ? "bg-gray-800 border-gray-700"
+                : "bg-white border-gray-200"
+            }`}
           >
             <h2 className="text-2xl text-teal-500 font-semibold">
               {project.name}

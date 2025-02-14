@@ -72,6 +72,7 @@ const ServicesOffered = ({ handleRef }) => {
           <div
             onClick={handleRef}
             key={index}
+            title={service.title}
             className=" hover:scale-105 transition-all duration-300 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl overflow-hidden cursor-pointer"
           >
             <div className="relative h-64 overflow-hidden bg-gradient-to-br from-cyan-100 to-teal-50 dark:from-gray-700 dark:to-gray-600 p-6">

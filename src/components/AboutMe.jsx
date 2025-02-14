@@ -6,9 +6,12 @@ import {
 } from "react-icons/ai";
 import { BsSpotify, BsWhatsapp } from "react-icons/bs";
 import { SiApplemusic } from "react-icons/si";
+import { useTheme } from "../context/ThemeContext";
 
 const AboutMe = () => {
   const youTubeRef = useRef(null);
+  const { theme } = useTheme();
+
   function handleYouTubeRef() {
     if (youTubeRef.current) {
       youTubeRef.current.style.transition =
@@ -28,7 +31,8 @@ const AboutMe = () => {
     <section className="py-12 mx-auto text-center xl:max-w-[900px] px-4">
       <h2
         onClick={handleYouTubeRef}
-        className="text-5xl cursor-pointer active:scale-95 md:text-6xl text-teal-600 font-semibold text-center mb-4"
+        title="NY Henry"
+        className={`text-6xl dark:text-white cursor-pointer active:scale-95 md:text-6xl text-slate-900  drop-shadow-sm font-semibold text-center mb-6`}
       >
         NY Henry
       </h2>
@@ -62,7 +66,7 @@ const AboutMe = () => {
         and a lot more...
       </p>
       {/* Social media Icons */}
-      <div className="flex items-center text-5xl justify-center p-4 rounded gap-6">
+      <div className="flex items-center text-5xl justify-center p-4 rounded gap-4">
         {/* X Logo */}
         <a
           href="https://x.com/NyHenry5"
@@ -91,7 +95,6 @@ const AboutMe = () => {
             style={{ color: "#FF0000" }}
           />
         </a>
-
         {/* Linked In Logo */}
         <a
           href="https://www.linkedin.com/in/ny-henry-766827267/"
@@ -105,7 +108,6 @@ const AboutMe = () => {
             style={{ color: "#0A66C2" }}
           />
         </a>
-
         {/* Whatsapp Logo */}
         <a
           href="https://wa.me/+256704025224"
@@ -119,7 +121,6 @@ const AboutMe = () => {
             style={{ color: "#25D366" }}
           />
         </a>
-
         {/* Spotify Logo */}
         <a
           href="https://open.spotify.com/artist/0CwTUyi6ZRkPrWpfqCtIAh?si=TMcEHmUQRf21O4U1OT6xCw"
