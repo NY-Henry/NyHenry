@@ -131,11 +131,7 @@ const Home = () => {
                 Go back to top
               </button>
             </div>
-            <a href="mailto:nyomorehenry@gmail.com" target="blank">
-              <p className="text-sm  m-4 text-center underline cursor-pointer dark:text-white">
-                nyomorehenry@gmail.com
-              </p>
-            </a>
+
             <p className="text-sm  m-4 text-center underline cursor-pointer dark:text-white">
               &copy;{new Date().getFullYear()} NY Henry
             </p>
