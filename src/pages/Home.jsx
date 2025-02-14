@@ -12,6 +12,7 @@ import { BsWhatsapp } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import Languages from "../components/Languages";
 import { useTheme } from "../context/ThemeContext";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   const [welcomeMessage, setWelcomeMessage] = useState(false);
@@ -52,89 +53,96 @@ const Home = () => {
   }
 
   return (
-    <div className={`${theme === "dark" ? "dark" : ""} `}>
-      <section
-        className={`min-h-screen px-10 font-Fredoka bg-gray-50  dark:bg-gray-900 text-gray-800`}
-      >
-        <Navbar toggleModal={toggleModal} />
-        {welcomeMessage && (
-          <div className="text-center duration-300 animate-bounce rounded-lg  py-2">
-            <h1 className="text-xl font-bold text-teal-500 dark:text-cyan-200">
-              Welcome to My Portfolio 🙋‍♂️
-            </h1>
-            <p className="text-md animate-bounce duration-300 text-gray-700 dark:text-gray-300 mt-4">
-              Explore my work and get to know more about me.
-            </p>
-          </div>
-        )}
-        {/* About Section */}
-        <AboutMe />
-        {/* Profile Image */}
-        <div
-          title="NY Henry"
-          className="w-80 h-80 mx-auto overflow-hidden m-12 rounded-full shadow-xl shadow-red-500 transition-all duration-300 hover:scale-105 hover:shadow-cyan-500 hover:rotate-3"
+    <>
+      <Helmet>
+        <title>NY Henry - Home</title>
+        <meta name="description" content="Welcome!" />
+      </Helmet>
+
+      <div className={`${theme === "dark" ? "dark" : ""} `}>
+        <section
+          className={`min-h-screen px-10 font-Fredoka bg-gray-50  dark:bg-gray-900 text-gray-800`}
         >
-          <ImageComponent />
-        </div>
-        {/* Services Offered Section */}
-        <ServicesOffered handleRef={handleCardRef} />
-        {/* Languages Section */}
-        <Languages />
-
-        {/* Last Section */}
-        <section className="py-12 px-4">
-          <p
-            onClick={handleRef}
-            className="text-xl text-center underline cursor-pointer dark:text-white"
+          <Navbar toggleModal={toggleModal} />
+          {welcomeMessage && (
+            <div className="text-center duration-300 animate-bounce rounded-lg  py-2">
+              <h1 className="text-xl font-bold text-teal-500 dark:text-cyan-200">
+                Welcome to My Portfolio 🙋‍♂️
+              </h1>
+              <p className="text-md animate-bounce duration-300 text-gray-700 dark:text-gray-300 mt-4">
+                Explore my work and get to know more about me.
+              </p>
+            </div>
+          )}
+          {/* About Section */}
+          <AboutMe />
+          {/* Profile Image */}
+          <div
+            title="NY Henry"
+            className="w-80 h-80 mx-auto overflow-hidden m-12 rounded-full shadow-xl shadow-red-500 transition-all duration-300 hover:scale-105 hover:shadow-cyan-500 hover:rotate-3"
           >
-            Lastly connect with me or reach out to me on any of these 👇
-          </p>
-          <div className="flex items-center text-black dark:text-white text-5xl justify-center p-4  rounded gap-6">
-            <a href="https://x.com/NyHenry5" target="blank">
-              <AiFillTwitterCircle className="  cursor-pointer" />
-            </a>
-            <a href="https://wa.me/+256704025224" target="blank">
-              <BsWhatsapp className="  cursor-pointer" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/ny-henry-766827267/"
-              target="blank"
-            >
-              <AiFillLinkedin className="  cursor-pointer" />
-            </a>
-            <a href="https://www.youtube.com/@nyhenry" target="blank">
-              <AiFillYoutube className="  cursor-pointer" />
-            </a>
-            <a
-              ref={emailRef}
-              href="mailto:nyomorehenry@gmail.com"
-              target="blank"
-            >
-              <MdEmail className=" cursor-pointer" />
-            </a>
+            <ImageComponent />
           </div>
+          {/* Services Offered Section */}
+          <ServicesOffered handleRef={handleCardRef} />
+          {/* Languages Section */}
+          <Languages />
 
-          {/* create a div with text of go back to to */}
-
-          <div className="flex justify-center">
-            <button
-              onClick={handleTakingToTop}
-              className="bg-gradient-to-b dark:text-white shadow-lg from-teal-500 to-cyan-200 p-4 rounded-lg text-black"
+          {/* Last Section */}
+          <section className="py-12 px-4">
+            <p
+              onClick={handleRef}
+              className="text-xl text-center underline cursor-pointer dark:text-white"
             >
-              Go back to top
-            </button>
-          </div>
-          <a href="mailto:nyomorehenry@gmail.com" target="blank">
-            <p className="text-sm  m-4 text-center underline cursor-pointer dark:text-white">
-              nyomorehenry@gmail.com
+              Lastly connect with me or reach out to me on any of these 👇
             </p>
-          </a>
-          <p className="text-sm  m-4 text-center underline cursor-pointer dark:text-white">
-            &copy;{new Date().getFullYear()} NY Henry
-          </p>
+            <div className="flex items-center text-black dark:text-white text-5xl justify-center p-4  rounded gap-6">
+              <a href="https://x.com/NyHenry5" target="blank">
+                <AiFillTwitterCircle className="  cursor-pointer" />
+              </a>
+              <a href="https://wa.me/+256704025224" target="blank">
+                <BsWhatsapp className="  cursor-pointer" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ny-henry-766827267/"
+                target="blank"
+              >
+                <AiFillLinkedin className="  cursor-pointer" />
+              </a>
+              <a href="https://www.youtube.com/@nyhenry" target="blank">
+                <AiFillYoutube className="  cursor-pointer" />
+              </a>
+              <a
+                ref={emailRef}
+                href="mailto:nyomorehenry@gmail.com"
+                target="blank"
+              >
+                <MdEmail className=" cursor-pointer" />
+              </a>
+            </div>
+
+            {/* create a div with text of go back to to */}
+
+            <div className="flex justify-center">
+              <button
+                onClick={handleTakingToTop}
+                className="bg-gradient-to-b dark:text-white shadow-lg from-teal-500 to-cyan-200 p-4 rounded-lg text-black"
+              >
+                Go back to top
+              </button>
+            </div>
+            <a href="mailto:nyomorehenry@gmail.com" target="blank">
+              <p className="text-sm  m-4 text-center underline cursor-pointer dark:text-white">
+                nyomorehenry@gmail.com
+              </p>
+            </a>
+            <p className="text-sm  m-4 text-center underline cursor-pointer dark:text-white">
+              &copy;{new Date().getFullYear()} NY Henry
+            </p>
+          </section>
         </section>
-      </section>
-    </div>
+      </div>
+    </>
   );
 };
 

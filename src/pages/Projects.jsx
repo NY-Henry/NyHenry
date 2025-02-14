@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
+import { Helmet } from "react-helmet-async";
 
 const Projects = () => {
   const navigate = useNavigate();
@@ -34,56 +35,62 @@ const Projects = () => {
   };
 
   return (
-    <div
-      className={`container mx-auto p-4 ${
-        theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-gray-800"
-      }`}
-    >
-      <h1 className="text-4xl cursor-pointer text-center text-teal-500 font-bold mb-4">
-        Projects Page Will Be Ready Soon !
-      </h1>
-      <p className="mb-8 text-xl font-bold text-center">
-        Meanwhile, here are some of the projects I've worked on:
-      </p>
-      <ul className="space-y-4">
-        {projects.map((project, index) => (
-          <li
-            key={index}
-            className={`p-4 active:scale-95 cursor-pointer border rounded shadow 
+    <>
+      <Helmet>
+        <title>Products - NY Henry</title>
+      </Helmet>
+
+      <div
+        className={`container mx-auto p-4 ${
+          theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-gray-800"
+        }`}
+      >
+        <h1 className="text-4xl cursor-pointer text-center text-teal-500 font-bold mb-4">
+          Projects Page Will Be Ready Soon !
+        </h1>
+        <p className="mb-8 text-xl font-bold text-center">
+          Meanwhile, here are some of the projects I've worked on:
+        </p>
+        <ul className="space-y-4">
+          {projects.map((project, index) => (
+            <li
+              key={index}
+              className={`p-4 active:scale-95 cursor-pointer border rounded shadow 
             ${
               theme === "dark"
                 ? "bg-gray-800 border-gray-700"
                 : "bg-white border-gray-200"
             }`}
+            >
+              <h2 className="text-2xl text-teal-500 font-semibold">
+                {project.name}
+              </h2>
+              <p>{project.description}</p>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-4 text-lg">
+          That doesn't mean I only work with javascript (React), not really. I
+          am learning new technologies, Languages and frame-Works and staying
+          up-to-date with the latest trends.
+        </p>
+        <div className="flex justify-between items-center">
+          <button
+            onClick={goToHome}
+            className="mt-8 px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-700"
           >
-            <h2 className="text-2xl text-teal-500 font-semibold">
-              {project.name}
-            </h2>
-            <p>{project.description}</p>
-          </li>
-        ))}
-      </ul>
-      <p className="mt-4 text-lg">
-        That doesn't mean I only work with javascript (React), not really. I am
-        learning new technologies, Languages and frame-Works and staying
-        up-to-date with the latest trends.
-      </p>
-      <div className="flex justify-between items-center">
-        <button
-          onClick={goToHome}
-          className="mt-8 px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-700"
-        >
-          Back to Home
-        </button>
-        <a
-          href="https://github.com/NY-Henry"
-          target="_blank"
-          className="mt-8 cursor-pointer px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-700"
-        >
-          CheckOut My Github
-        </a>
+            Back to Home
+          </button>
+          <a
+            href="https://github.com/NY-Henry"
+            target="_blank"
+            className="mt-8 cursor-pointer px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-700"
+          >
+            CheckOut My Github
+          </a>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

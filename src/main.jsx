@@ -6,6 +6,7 @@ import Error from "./pages/Error.jsx";
 import Projects from "./pages/Projects.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ThemeContextProvider } from "./context/ThemeContext.jsx";
+import { HelmetProvider } from "react-helmet-async";
 
 const route = createBrowserRouter([
   {
@@ -25,8 +26,10 @@ const route = createBrowserRouter([
 ]);
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ThemeContextProvider>
-      <RouterProvider router={route} />
-    </ThemeContextProvider>
+    <HelmetProvider>
+      <ThemeContextProvider>
+        <RouterProvider router={route} />
+      </ThemeContextProvider>
+    </HelmetProvider>
   </StrictMode>
 );
