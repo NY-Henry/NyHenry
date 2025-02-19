@@ -61,7 +61,7 @@ const Home = () => {
 
       <div className={`${theme === "dark" ? "dark" : ""} `}>
         <section
-          className={`min-h-screen px-10 font-Fredoka bg-gray-50  dark:bg-gray-900 text-gray-800`}
+          className={`min-h-screen px-10 font-Fredoka bg-gray-50  dark:bg-black text-gray-800`}
         >
           <Navbar toggleModal={toggleModal} />
           {welcomeMessage && (
@@ -79,7 +79,8 @@ const Home = () => {
           {/* Profile Image */}
           <div
             title="NY Henry"
-            className="w-80 h-80 mx-auto overflow-hidden m-12 rounded-full shadow-xl shadow-red-500 transition-all duration-300 hover:scale-105 hover:shadow-cyan-500 hover:rotate-3"
+            className="w-80 h-80 mx-auto overflow-hidden m-12 rounded-full shadow-lg shadow-gray-500 transition-all duration-300 hover:scale-105 hover:shadow-black
+             hover:rotate-3"
           >
             <ImageComponent />
           </div>

@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
 import { Helmet } from "react-helmet-async";
+import { AiFillGithub } from "react-icons/ai";
 
 const Projects = () => {
   const navigate = useNavigate();
@@ -42,7 +43,7 @@ const Projects = () => {
 
       <div
         className={`container mx-auto p-4 ${
-          theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-gray-800"
+          theme === "dark" ? "bg-black text-white" : "bg-white text-gray-800"
         }`}
       >
         <h1 className="text-4xl cursor-pointer text-center text-teal-500 font-bold mb-4">
@@ -86,7 +87,7 @@ const Projects = () => {
             target="_blank"
             className="mt-8 cursor-pointer px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-700"
           >
-            CheckOut My Github
+            <AiFillGithub className="cursor-pointer text-3xl text-black dark:text-white hover:brightness-125" />
           </a>
         </div>
       </div>
