@@ -9,10 +9,10 @@ export const ThemeContextProvider = ({ children }) => {
   // Setting the theme on page load
   const [theme, setTheme] = useState(() => {
     try {
-      return localStorage.getItem("theme") || "light";
+      return localStorage.getItem("theme") || "dark";
     } catch (error) {
       console.warn("localStorage is not available:", error);
-      return "light";
+      return "dark";
     }
   });
 
