@@ -59,17 +59,15 @@ const Home = () => {
         <meta name="description" content="Welcome!" />
       </Helmet>
 
-      <div className={`${theme === "dark" ? "dark" : ""} `}>
-        <section
-          className={`min-h-screen px-10 font-Fredoka bg-gray-50  dark:bg-black text-gray-800`}
-        >
+      <div className={`${theme === "dark" ? "dark" : ""}`}>
+        <section className="min-h-screen px-4 sm:px-10 font-Fredoka bg-gray-50 dark:bg-black text-gray-800">
           <Navbar toggleModal={toggleModal} />
           {welcomeMessage && (
-            <div className="text-center duration-300 animate-bounce rounded-lg  py-2">
-              <h1 className="text-xl font-bold text-teal-500 dark:text-cyan-200">
+            <div className="text-center duration-300 animate-bounce rounded-lg py-2">
+              <h1 className="text-xl sm:text-2xl font-bold text-teal-500 dark:text-cyan-200">
                 Welcome to My Portfolio 🙋‍♂️
               </h1>
-              <p className="text-md animate-bounce duration-300 text-gray-700 dark:text-gray-300 mt-4">
+              <p className="text-md sm:text-lg animate-bounce duration-300 text-gray-700 dark:text-gray-300 mt-4">
                 Explore my work and get to know more about me.
               </p>
             </div>
@@ -79,8 +77,7 @@ const Home = () => {
           {/* Profile Image */}
           <div
             title="NY Henry"
-            className="w-80 h-80 mx-auto overflow-hidden m-12 rounded-full shadow-lg shadow-gray-500 transition-all duration-300 hover:scale-105 hover:shadow-black
-             hover:rotate-3"
+            className="w-60 h-60 sm:w-80 sm:h-80 mx-auto overflow-hidden m-8 sm:m-12 rounded-full shadow-lg shadow-gray-500 transition-all duration-300 hover:scale-105 hover:shadow-black hover:rotate-3"
           >
             <ImageComponent />
           </div>
@@ -90,51 +87,49 @@ const Home = () => {
           <Languages />
 
           {/* Last Section */}
-          <section className="py-12 px-4">
+          <section className="py-8 sm:py-12 px-4">
             <p
               onClick={handleRef}
-              className="text-xl text-center underline cursor-pointer dark:text-white"
+              className="text-lg sm:text-xl text-center underline cursor-pointer dark:text-white"
             >
               Lastly connect with me or reach out to me on any of these 👇
             </p>
-            <div className="flex items-center text-black dark:text-white text-5xl justify-center p-4  rounded gap-6">
+            <div className="flex flex-wrap items-center text-black dark:text-white text-4xl sm:text-5xl justify-center p-4 rounded gap-4 sm:gap-6">
               <a href="https://x.com/NyHenry5" target="blank">
-                <AiFillTwitterCircle className="  cursor-pointer" />
+                <AiFillTwitterCircle className="cursor-pointer" />
               </a>
               <a href="https://wa.me/+256704025224" target="blank">
-                <BsWhatsapp className="  cursor-pointer" />
+                <BsWhatsapp className="cursor-pointer" />
               </a>
               <a
-                href="https://www.linkedin.com/in/ny-henry-766827267/"
+                href="https://www.linkedin.com/in/nyomore-henry-766827267/"
                 target="blank"
               >
-                <AiFillLinkedin className="  cursor-pointer" />
+                <AiFillLinkedin className="cursor-pointer" />
               </a>
               <a href="https://www.youtube.com/@nyhenry" target="blank">
-                <AiFillYoutube className="  cursor-pointer" />
+                <AiFillYoutube className="cursor-pointer" />
               </a>
               <a
                 ref={emailRef}
                 href="mailto:nyomorehenry@gmail.com"
                 target="blank"
               >
-                <MdEmail className=" cursor-pointer" />
+                <MdEmail className="cursor-pointer" />
               </a>
             </div>
 
-            {/* create a div with text of go back to to */}
-
-            <div className="flex justify-center">
+            <div className="flex justify-center mt-4">
               <button
                 onClick={handleTakingToTop}
-                className="bg-gradient-to-b dark:text-white shadow-lg from-teal-500 to-cyan-200 p-4 rounded-lg text-black"
+                className="bg-gradient-to-b dark:text-white shadow-lg from-teal-500 to-cyan-200 p-3 sm:p-4 rounded-lg text-black"
               >
                 Go back to top
               </button>
             </div>
 
-            <p className="text-sm  m-4 text-center underline cursor-pointer dark:text-white">
-              &copy;{new Date().getFullYear()} NY Henry
+            <p className="text-sm m-4 text-center underline cursor-pointer dark:text-white">
+              &copy; {new Date().getFullYear()} NY Henry
             </p>
           </section>
         </section>
