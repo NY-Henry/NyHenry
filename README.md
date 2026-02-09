@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio website repository! This modern web application is built using React and Vite, showcasing my professional experience, projects, and skills.
 
-[Portfolio Link](https://nyhenry.com)
+[Portfolio Link](https://dev.nyhenry.com)
 
 ## Tech Stack
 
